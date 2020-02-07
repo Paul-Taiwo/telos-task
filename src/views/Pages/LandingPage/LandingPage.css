@@ -1,0 +1,150 @@
+.h-100vh {
+    height: 100vh;
+}
+
+.pt-10 {
+    padding-top: 100px;
+}
+
+.pt-3-5 {
+    padding-top: 4.8em;
+}
+
+.pt-4-1 {
+    padding-top: 4em;
+}
+
+.mb-10 {
+    margin-bottom: 100px;
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+.navbar-toggler {
+    border: 1px solid #fff;
+}
+
+/* url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2851&q=80') */
+.banner {
+    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.9)), url('../../../assets/img/telos-bg_1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 0;
+    /*background-blend-mode: screen;
+    */-webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    -webkit-border-radius: 0;
+}
+
+.banner-text {
+    width: 90%;
+    position: absolute;
+    top: 48%;
+    left: 52%;
+    color: #ffffff;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.dropdown-item a {
+    padding: 10px 20px
+}
+
+.ld-img_height {
+    height: 280px;
+}
+
+.ld-img_width {
+    width: 300px;
+}
+
+.l-p-text {
+    font-size: 18px;
+}
+
+.font-18 {
+    font-size: 18px;
+}
+
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    background-color: #040302;
+}
+
+.banner-img {
+    position: absolute;
+    top: 18%;
+    left: 60%;
+    /* top: 50%;
+    left: 68%; */
+    color: #ffffff;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.banner-text_p {
+    font-size: 2rem;
+}
+
+.underline::before {
+    content: "";
+    height: 4px;
+    position: absolute;
+    border-radius: 5px;
+    width: 100px;
+    bottom: 0;
+    background-color: #ff9f18;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+
+@media screen and (max-width: 991px) {
+    .banner-img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    
+    .banner-text-md-h1 {
+        font-size: 2.7rem;
+    }
+
+    .banner-text_p {
+        font-size: 1.5rem;
+    }
+
+    .ld-img_height {
+        height: 250px;
+    }
+
+    nav.navbar.pl-5 {
+        padding-left: 0.2em !important;
+    }
+
+    nav.navbar.pr-5 {
+        padding-right: 0.6em !important;
+    }
+
+}

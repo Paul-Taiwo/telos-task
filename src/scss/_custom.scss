@@ -1,0 +1,45 @@
+// Here you can add other styles
+
+$telos-yellow: #ff9f18;
+$telos-blue: #52a0cf;
+$telos-red: #d41319;
+$telos-orange: #e86c0b;
+$white: #fff;
+
+.text-yellow {
+    color: $telos-yellow;
+}
+
+.bg-telos_yellow {
+    color: $telos-yellow;
+}
+
+.bg-telos_red {
+    color: $telos-red;
+}
+
+.telos-btn_red {
+    background-color: $telos-red !important;
+    color: $white !important;
+    border-color: $telos-red !important;
+}
+
+.telos-btn_red.btn-secondary {
+    &:hover {
+        background-color: darken($color: $telos-red, $amount: 10%) !important;
+        color: $white !important;
+    }
+}
+
+.telos-btn_orange {
+    background-color: $telos-orange !important;
+    color: $white !important;
+    border-color: $telos-orange !important;
+}
+
+.telos-btn_orange.btn-secondary {
+    &:hover {
+        background-color: darken($color: $telos-orange, $amount: 10%) !important;
+        color: $white !important;
+    }
+}

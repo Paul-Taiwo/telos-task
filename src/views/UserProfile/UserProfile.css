@@ -1,0 +1,47 @@
+.table th,
+.table td {
+    padding: 0.4em;
+}
+.table th{
+    width: 10%;
+}
+
+.table td {
+    color: #626262;
+}
+
+.card {
+    box-shadow: 0 4px 25px 0 rgba(0,0,0,.1);
+}
+
+table.table {
+    margin-right: 50px;;
+}
+
+@media screen and (max-width: 500px) {
+    img.card-img {
+        width: 180px;
+    }
+
+}
+
+@media screen and (max-width: 370px) {
+
+    table:not(.permissions-table) td,
+    table:not(.permissions-table) th{
+        display: block;
+    }
+
+    table td,
+    table th {
+        vertical-align: top;
+        min-width: 140px;
+        word-break: break-all;
+    }
+
+    [dir] table th,
+    [dir] table td {
+        padding-bottom: 0.8rem;
+    }
+
+}

@@ -1,0 +1,6 @@
+{
+  "name": "TaskCompleted",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./TaskCompleted.js"
+}

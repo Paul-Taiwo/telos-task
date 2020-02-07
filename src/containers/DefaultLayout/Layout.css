@@ -1,0 +1,18 @@
+a,
+a:hover,
+.sidebar .nav-link.active .nav-icon {
+    color: #e86c0b;
+}
+
+.dropdown-item:active,
+.sidebar .nav-link:hover,
+.sidebar-minimized .sidebar .nav-link:hover,
+.sidebar-minimized .sidebar .nav-item:hover > .nav-link {
+    background: #e86c0b;
+}
+
+@media screen and (max-width: 500px) {
+    .drp-name {
+        display: none
+    }
+}

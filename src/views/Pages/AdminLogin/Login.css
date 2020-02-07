@@ -1,0 +1,14 @@
+.bg_login {
+    background-position: center;
+    background: linear-gradient(rgba(0,0,0,0.6), black), url(../../../assets/img/bg-login.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-telos_orange {
+    background-color: #e86c0b !important ;
+}
+
+.logo {
+    cursor: pointer;
+}

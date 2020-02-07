@@ -1,0 +1,14 @@
+.bg_register {
+    background-position: center;
+    background: linear-gradient(rgba(0,0,0,0.6), black), url(../../../assets/img/bg-reg.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-yellow {
+    background-color: #fe9f18 !important;
+}
+
+.logo {
+    cursor: pointer;
+}
