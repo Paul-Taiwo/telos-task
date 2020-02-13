@@ -1,5 +1,14 @@
 const functions = require("firebase-functions");
 
+
+const admin = require("firebase-admin");
+const serviceAccount = require("./telos-task-2ee4b-firebase-adminsdk-9uq9m-c094aa3295.json");
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    storageBucket: "telos-task-2ee4b.appspot.com"
+});
+
+
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");

@@ -1,26 +1,22 @@
 
 const admin = require("firebase-admin");
-const serviceAccount = require("../telos-task-2ee4b-firebase-adminsdk-9uq9m-c094aa3295.json");
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    storageBucket: "telos-task-2ee4b.appspot.com"
-});
-
 
 const path = require("path");
 const os = require("os");
 const fs = require("fs");
 const Busboy = require("busboy");
 const bucket = admin.storage().bucket("telos-task-2ee4b.appspot.com");
-const fancyLogger = require("fancy-log");
 
 class UploadController {
     static upload(req, res) {
         res.set(
             "Access-Control-Allow-Origin",
-            "https://ivsys-b6b8b.firebaseapp.com"
+            "https://ivsys-b6b8b.firebaseapp.com",
+            // "http://localhost:3000"
         );
         res.set("Access-Control-Allow-Credentials", "true");
+
+        console.log('request', req)
 
         const busboy = new Busboy({ headers: req.headers });
         const tmpdir = os.tmpdir();
@@ -58,19 +54,20 @@ class UploadController {
             // TODO(developer): Process saved files here
 
             try {
-                const re = await bucket.upload(uploads);
-                const [urRes] = await bucket
-                    .file(re[0].metadata.name)
+                const uploadResponse = await bucket.upload(uploads);
+                const [urlRes] = await bucket
+                    .file(uploadResponse[0].metadata.name)
                     .getSignedUrl({
                         version: "v2",
                         action: "read",
                         expires: "03-09-2491"
                     });
-                fancyLogger.info("Response ====> ", urRes);
+                    console.log(`Response ====> ${urlRes}`);
 
-                res.json({ link: urRes });
-            } catch (err) {
-                fancyLogger.error("Erorr ====> ", err);
+                res.json({ link: urlRes });
+            } catch (err) {           
+                console.log(`Error ====> ${err}`);
+
                 res.status(500).json({ error: err });
             }
             fs.unlinkSync(uploads);

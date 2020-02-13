@@ -4,7 +4,7 @@
 
 @media screen and (min-width: 700px){
     .task-card_width {
-        flex-basis: 49%;
+        flex-basis: 48.3%;
     }
 }
 

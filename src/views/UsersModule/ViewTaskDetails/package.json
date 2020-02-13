@@ -1,0 +1,6 @@
+{
+  "name": "ViewTaskDetails",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./ViewTaskDetails.js"
+}

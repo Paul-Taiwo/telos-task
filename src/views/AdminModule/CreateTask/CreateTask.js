@@ -14,8 +14,8 @@ import {
   FormText
 } from 'reactstrap';
 
-import AlertMe from "../../views/Notifications/Alerts/Alerts";
-import { createTaskAction } from "../../redux/actions/createTaskAction";
+import AlertMe from "../../Notifications/Alerts/Alerts";
+import { createTaskAction } from "../../../redux/actions/createTaskAction";
 
 const CreateTask = (props) => {
   
@@ -23,8 +23,19 @@ const CreateTask = (props) => {
   const [taskData, setTaskData] = useState({
     taskName: null,
     taskDescription: null,
+    taskImage: null,
+    taskAmount: null,
+    selectCategory: null,
   });
+
   const [showAlert, setShowAlert] = useState(false);
+
+  // const setInputTouchedStatus = (field) => {
+  //   const fieldStatusName = `isTask${field.substr(4)}FieldTouched`;
+
+  //   setTaskData({ ...taskData, [fieldStatusName]: true });
+  
+  // }
 
   const dismissAlertHandler = () => {
     setTimeout(() => { setShowAlert(false)}, 2500)
@@ -34,16 +45,27 @@ const CreateTask = (props) => {
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
 
-    setTaskData({...taskData, [name]: taskData[name] = value})
+    if (name === "taskImage") {
+      setTaskData({ ...taskData, [name]: taskData[name] = document.querySelector("#taskImage").files[0] });
+    } else {
+      setTaskData({...taskData, [name]: taskData[name] = value})
+    }
+
   };
 
   // Handle form submission
   const onSubmitHandler = async (e) => {
     e.preventDefault();
 
+    // Create task
     await props.createTask(taskData)
+
+    // Show Alert and Dimiss
     setShowAlert(true);
     dismissAlertHandler();
+
+    // Reset Form
+    document.forms.taskCreationForm.reset();
   };
 
   return (
@@ -57,20 +79,23 @@ const CreateTask = (props) => {
         <Row>
           <Col xs="12">
             <Card>
-              <form name="taskCreationForm" onSubmit={onSubmitHandler}>
-                { props.taskState.success ? document.forms.taskCreationForm.reset() : (null)}
+              <form name="taskCreationForm" onSubmit={onSubmitHandler} noValidate encType="multipart/form-data">
                 <CardHeader>
                   <strong>Create Task</strong>
                 </CardHeader>
                 <CardBody>
                   <FormGroup>
                     <Label htmlFor="taskName">Task Name</Label>
-                    <Input type="text" id="taskName" name="taskName" onChange={onChangeHandler} placeholder="Enter task name" />
+                    <Input type="text" id="taskName" name="taskName" onChange={onChangeHandler} placeholder="Enter task name"  required />
+
+                    {/* <FormText color="danger">
+                      Please Input task name
+                    </FormText> */}
                   </FormGroup>
 
                   <FormGroup>
                     <Label for="taskImage">Task Image</Label>
-                    <Input type="file" name="taskImage" id="taskImage" />
+                    <Input type="file" name="taskImage" id="taskImage" onChange={onChangeHandler} accept="image/*" />
 
                     <FormText color="muted">
                       Upload an image for the task
@@ -83,11 +108,17 @@ const CreateTask = (props) => {
                   </FormGroup>
 
                   <FormGroup>
-                    <Label for="exampleSelect">Select Category</Label>
-                    <Input type="select" name="select" id="exampleSelect">
+                    <Label for="selectCategory">Select Category</Label>
+                    <Input type="select" name="selectCategory" id="selectCategory" onChange={onChangeHandler}>
+                      <option>Select Category</option>
                       <option>Facebook</option>
                       <option>Twitter</option>
                       <option>Instagram</option>
+                      <option>Youtube</option>
+                      <option>VK</option>
+                      <option>Medium</option>
+                      <option>LinkedIn</option>
+                      <option>Discord</option>
                       <option>Reddit</option>
                       <option>Other</option>
                     </Input>

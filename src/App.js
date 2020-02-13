@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import PrivateRoute from './components/PrivateRoute';
 // import { renderRoutes } from 'react-router-config';
 import './App.scss';
 

@@ -5,7 +5,7 @@ const Cards = React.lazy(() => import('./views/Base/Cards/Cards'));
 const Carousels = React.lazy(() => import('./views/Base/Carousels/Carousels'));
 const Collapses = React.lazy(() => import('./views/Base/Collapses/Collapses'));
 const Dropdowns = React.lazy(() => import('./views/Base/Dropdowns/Dropdowns'));
-const CreateTask = React.lazy(() => import('./views/CreateTask/CreateTask'));
+const CreateTask = React.lazy(() => import('./views/AdminModule/CreateTask/CreateTask'));
 const Jumbotrons = React.lazy(() => import('./views/Base/Jumbotrons/Jumbotrons'));
 const ListGroups = React.lazy(() => import('./views/Base/ListGroups/ListGroups'));
 const Navbars = React.lazy(() => import('./views/Base/Navbars/Navbars'));
@@ -38,7 +38,7 @@ const User = React.lazy(() => import('./views/Users/User'));
 
 const UserProfile = React.lazy(() => import("./views/UserProfile"));
 const Settings = React.lazy(() => import("./views/Settings"));
-const Payments = React.lazy(() => import("./views/Payments"));
+const Payments = React.lazy(() => import("./views/AdminModule/Payments/Payments"));
 
 
 
@@ -66,27 +66,6 @@ const routes = [
   { path: "/base/list-groups", name: "List Groups", component: ListGroups },
   { path: "/base/navbars", name: "Navbars", component: Navbars },
   { path: "/admin/base/navs", name: "Navs", component: Navs },
-  { path: "/base/paginations", name: "Paginations", component: Paginations },
-  { path: "/base/popovers", name: "Popovers", component: Popovers },
-  { path: "/base/progress-bar", name: "Progress Bar", component: ProgressBar },
-  { path: "/base/tooltips", name: "Tooltips", component: Tooltips },
-  { path: "/buttons", exact: true, name: "Buttons", component: Buttons },
-  { path: "/buttons/buttons", name: "Buttons", component: Buttons },
-  {
-    path: "/buttons/button-dropdowns",
-    name: "Button Dropdowns",
-    component: ButtonDropdowns
-  },
-  {
-    path: "/buttons/button-groups",
-    name: "Button Groups",
-    component: ButtonGroups
-  },
-  {
-    path: "/buttons/brand-buttons",
-    name: "Brand Buttons",
-    component: BrandButtons
-  },
   { path: "/admin/icons", exact: true, name: "Icons", component: CoreUIIcons },
   { path: "/admin/icons/coreui-icons", name: "CoreUI Icons", component: CoreUIIcons },
   { path: "/icons/flags", name: "Flags", component: Flags },

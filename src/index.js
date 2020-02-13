@@ -21,6 +21,7 @@ import thunk from "redux-thunk";
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
+import "firebase/storage";
 import fbConfig from "./config/firebaseConfig";
 import rrfConfig from "./config/reactReduxFirebaseConfig";
 
