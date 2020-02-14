@@ -22,15 +22,12 @@ class AsyncComponent extends PureComponent {
 
     renderChildren() {
         return React.Children.map(this.props.children, child => {
-            console.log("In HOC Async ", this.props.children)
-            console.log("In HOC Child ", child)
             if (child !== null) {
                 return React.cloneElement(child, {
                     data: this.state.data
                 })
             }
-        }
-        );
+        });
     }
 
     render() {

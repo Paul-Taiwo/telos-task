@@ -70,24 +70,6 @@ const routes = [
   { path: "/admin/icons/coreui-icons", name: "CoreUI Icons", component: CoreUIIcons },
   { path: "/icons/flags", name: "Flags", component: Flags },
   { path: "/icons/font-awesome", name: "Font Awesome", component: FontAwesome },
-  {
-    path: "/admin/icons/simple-line-icons",
-    name: "Simple Line Icons",
-    component: SimpleLineIcons
-  },
-  {
-    path: "/notifications",
-    exact: true,
-    name: "Notifications",
-    component: Alerts
-  },
-  { path: "/notifications/alerts", name: "Alerts", component: Alerts },
-  { path: "/notifications/badges", name: "Badges", component: Badges },
-  { path: "/notifications/modals", name: "Modals", component: Modals },
-  { path: "/widgets", name: "Widgets", component: Widgets },
-  { path: "/charts", name: "Charts", component: Charts },
-  { path: "/users", exact: true, name: "Users", component: Users },
-  { path: "/users/:id", exact: true, name: "User Details", component: User }
 ];
 
 export default routes;
